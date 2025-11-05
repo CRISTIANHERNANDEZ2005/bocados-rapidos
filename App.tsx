@@ -24,12 +24,7 @@ const App: React.FC = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/test')
-      .then(res => res.json())
-      .then(data => setDbStatus(data.now))
-      .catch(err => console.error(err));
-
-    fetch('http://localhost:3001/api/products')
+    fetch('/api/products')
       .then(res => res.json())
       .then(data => {
         console.log('Products data:', data);
